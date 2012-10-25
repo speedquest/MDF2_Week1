@@ -36,16 +36,16 @@
     }
     self.title = @"The Calendar";
     
-    NSDate *date0 = [NSDate dateWithTimeIntervalSinceNow:86400+370];
-    NSDate *date1 = [NSDate dateWithTimeIntervalSinceNow:86400*3+122];
-    NSDate *date2 = [NSDate dateWithTimeIntervalSinceNow:86400*6+42];
-    NSDate *date3 = [NSDate dateWithTimeIntervalSinceNow:86400*9+221];
-    NSDate *date4 = [NSDate dateWithTimeIntervalSinceNow:86400*12+382];
-    NSDate *date5 = [NSDate dateWithTimeIntervalSinceNow:86400*15+1122];
-    NSDate *date6 = [NSDate dateWithTimeIntervalSinceNow:86400*17+334];
-    NSDate *date7 = [NSDate dateWithTimeIntervalSinceNow:86400*20+765];
-    NSDate *date8 = [NSDate dateWithTimeIntervalSinceNow:86400*22+1234];
-    NSDate *date9 = [NSDate dateWithTimeIntervalSinceNow:86400*25+762];
+    NSDate *date0 = [NSDate dateWithTimeIntervalSinceNow:86400+180];
+    NSDate *date1 = [NSDate dateWithTimeIntervalSinceNow:86400*2+480];
+    NSDate *date2 = [NSDate dateWithTimeIntervalSinceNow:86400*3+1500];
+    NSDate *date3 = [NSDate dateWithTimeIntervalSinceNow:86400*6+720];
+    NSDate *date4 = [NSDate dateWithTimeIntervalSinceNow:86400*10+1440];
+    NSDate *date5 = [NSDate dateWithTimeIntervalSinceNow:86400*12+3600];
+    NSDate *date6 = [NSDate dateWithTimeIntervalSinceNow:86400*14+360];
+    NSDate *date7 = [NSDate dateWithTimeIntervalSinceNow:86400*21+5680];
+    NSDate *date8 = [NSDate dateWithTimeIntervalSinceNow:86400*23+720];
+    NSDate *date9 = [NSDate dateWithTimeIntervalSinceNow:86400*28+480];
     
     events = [[NSMutableArray alloc]initWithObjects:
               @"Full Sail Class: MDF2",
