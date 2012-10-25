@@ -153,7 +153,7 @@
 						<reference key="source" ref="541163269"/>
 						<reference key="destination" ref="1004029668"/>
 					</object>
-					<int key="connectionID">70</int>
+					<int key="connectionID">84</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -161,7 +161,7 @@
 						<reference key="source" ref="541163269"/>
 						<reference key="destination" ref="765408157"/>
 					</object>
-					<int key="connectionID">71</int>
+					<int key="connectionID">85</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -288,6 +288,7 @@
 							<reference ref="32241798"/>
 						</array>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Custom Cell View</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
@@ -471,7 +472,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">83</int>
+			<int key="maxID">85</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

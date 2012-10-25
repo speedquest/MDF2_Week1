@@ -99,17 +99,17 @@
                 cell = (CustomCellView*)view;
                 cell.textLabel.text = [events objectAtIndex:indexPath.row];
                 
-                /*
+                
                  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
                 
                 NSDate *tDate = [dates objectAtIndex:indexPath.row];
                 NSString *fDate = [dateFormat stringFromDate:tDate];
                 cell.detailLabel.text = fDate;
-                 */
+                 
             }
         }
-        /*cell.textLabel.text = [events objectAtIndex:indexPath.row];
+        cell.textLabel.text = [events objectAtIndex:indexPath.row];
         
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
@@ -117,7 +117,7 @@
         NSDate *tDate = [dates objectAtIndex:indexPath.row];
         NSString *fDate = [dateFormat stringFromDate:tDate];
         cell.detailLabel.text = fDate;
-         */
+         
     }
     return cell;
 }
