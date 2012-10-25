@@ -21,11 +21,10 @@
 
 
 - (void)viewDidLoad
-
 {
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:1.0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    NSDate *notifyDate = [[NSDate date] dateByAddingTimeInterval:30];
+    NSDate *notifyDate = [[NSDate date] dateByAddingTimeInterval:3];
     UILocalNotification *theNotification = [[UILocalNotification alloc] init];
     if (theNotification != nil)
     {
@@ -111,15 +110,18 @@
             {
                 cell = (CustomCellView*)view;
                 cell.textLabel.text = [events objectAtIndex:indexPath.row];
-                NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+                
+                /*
+                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
                 
                 NSDate *tDate = [dates objectAtIndex:indexPath.row];
                 NSString *fDate = [dateFormat stringFromDate:tDate];
                 cell.detailLabel.text = fDate;
+                 */
             }
         }
-        cell.textLabel.text = [events objectAtIndex:indexPath.row];
+        /*cell.textLabel.text = [events objectAtIndex:indexPath.row];
         
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
@@ -127,6 +129,7 @@
         NSDate *tDate = [dates objectAtIndex:indexPath.row];
         NSString *fDate = [dateFormat stringFromDate:tDate];
         cell.detailLabel.text = fDate;
+         */
     }
     return cell;
 }
@@ -146,69 +149,6 @@
     [self presentModalViewController:detailView animated:true];
     [detailView passTitle:theTitle passDate:tDate passLocation:thePlaces];
 }
-/* 
-    BAD CODE FROM iOS 5...
-     
-    EKEventStore *eventStore = [[EKEventStore alloc] init];
-    if (eventStore != nil)
-    {
-        NSArray *calendars = [eventStore calendars];
-        if (calendars != nil)
-        {
-            for (int i=0; i<[calendars count]; i++)
-            {
-                EKCalendar *calendar = [calendars objectAtIndex:i];
-                NSLog(@"%@", [calendars description]);
-                NSLog(@"%@", calendar.title);
-            }
-            NSDate *startDate = [NSDate date];
-            NSDate *endDate = [[NSDate alloc] initWithTimeInterval:86400 sinceDate:startDate];
-            NSPredicate *predicate = [eventStore predicateForEventsWithStartDate:startDate endDate:endDate calendars:nil];
-            NSArray *events = [eventStore eventsMatchingPredicate:predicate];
-            if (events != nil)
-            {
-                NSLog(@"%@", [events description]);
-            }
-        }
-}*/
-/*   EXAMPLE CODE FROM VIDEO
- EKEventStore *eventStore = [[EKEventStore alloc] init];
-    if (eventStore != nil)
-    {
-        //  iOS 6 now requires access rights to be granted for Calendar access:
-        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
-        {
-            if (granted)
-            {
-                NSArray *calendars = [eventStore calendarsForEntityType:EKEntityTypeEvent];
-                if (calendars != nil)
-                {
-                    for (int i=0; i<[calendars count]; i++)
-                    {
-                        EKCalendar *calendar = [calendars objectAtIndex:i];
-                        //NSLog(@"%@", [calendars]);
-                        NSLog(@"%@", calendar.title);
-                    }
-                    NSDate *startDate = [NSDate date];
-                    NSDate *endDate = [[NSDate alloc] initWithTimeInterval:86400 sinceDate:startDate];
-                    NSPredicate *predicate = [eventStore predicateForEventsWithStartDate:startDate endDate:endDate calendars:nil];
-                    NSArray *events = [eventStore eventsMatchingPredicate:predicate];
-                    if (events != nil)
-                    {
-                        NSLog(@"%@", [events description]);
-                    }
-                }
-            }
-            else
-            {
-                
-            }
-        }];
-    }
-     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
- */
 
 - (void)didReceiveMemoryWarning
 {

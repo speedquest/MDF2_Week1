@@ -23,6 +23,7 @@
 		A43B5FB616389B7800404BD0 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43B5FB416389B7800404BD0 /* DetailViewController.xib */; };
 		A43B5FBB1638A37200404BD0 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43B5FBA1638A37200404BD0 /* CustomCellView.xib */; };
 		A43B5FBE1638A49F00404BD0 /* CustomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A43B5FBD1638A49F00404BD0 /* CustomCellView.m */; };
+		A43B5FCC1638DB5600404BD0 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A43B5FCB1638DB5600404BD0 /* calendar_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		A43B5FBA1638A37200404BD0 /* CustomCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCellView.xib; path = ../CustomCellView.xib; sourceTree = "<group>"; };
 		A43B5FBC1638A49F00404BD0 /* CustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCellView.h; path = ../CustomCellView.h; sourceTree = "<group>"; };
 		A43B5FBD1638A49F00404BD0 /* CustomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCellView.m; path = ../CustomCellView.m; sourceTree = "<group>"; };
+		A43B5FCB1638DB5600404BD0 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_icon.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		A4124E7D16387EA100324FA0 /* MDF2_Calendar_Week1 */ = {
 			isa = PBXGroup;
 			children = (
+				A43B5FCB1638DB5600404BD0 /* calendar_icon.png */,
 				A4124E8616387EA100324FA0 /* AppDelegate.h */,
 				A4124E8716387EA100324FA0 /* AppDelegate.m */,
 				A4124E8F16387EA100324FA0 /* ViewController.h */,
@@ -185,6 +188,7 @@
 				A4124E9416387EA100324FA0 /* ViewController.xib in Resources */,
 				A43B5FB616389B7800404BD0 /* DetailViewController.xib in Resources */,
 				A43B5FBB1638A37200404BD0 /* CustomCellView.xib in Resources */,
+				A43B5FCC1638DB5600404BD0 /* calendar_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
