@@ -22,18 +22,6 @@
 
 - (void)viewDidLoad
 {
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:1.0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    NSDate *notifyDate = [[NSDate date] dateByAddingTimeInterval:3];
-    UILocalNotification *theNotification = [[UILocalNotification alloc] init];
-    if (theNotification != nil)
-    {
-        theNotification.fireDate = notifyDate;
-        theNotification.timeZone = [NSTimeZone localTimeZone];
-        theNotification.alertBody = @"Did you mean to close The Calendar?";
-        theNotification.alertAction = @"Re-open";
-        [[UIApplication sharedApplication] scheduleLocalNotification:theNotification];
-    }
     self.title = @"The Calendar";
     
     NSDate *date0 = [NSDate dateWithTimeIntervalSinceNow:86400+180];

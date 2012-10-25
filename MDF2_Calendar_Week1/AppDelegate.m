@@ -30,6 +30,18 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    NSDate *notifyDate = [[NSDate date] dateByAddingTimeInterval:3];
+    
+    UILocalNotification *myNotification = [[UILocalNotification alloc] init];
+    if (myNotification != nil)
+    {
+        myNotification.fireDate = notifyDate;
+        myNotification.timeZone = [NSTimeZone localTimeZone];
+        myNotification.alertBody = @"Did you mean to close The Calendar?";
+        myNotification.alertAction = @"Open it again!";
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:myNotification];
+    }
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
