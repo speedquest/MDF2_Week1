@@ -24,6 +24,7 @@
 {
     self.title = @"The Calendar";
     
+    //  Establishing the array that contains the times/dates/locations
     NSDate *date0 = [NSDate dateWithTimeIntervalSinceNow:86400+180];
     NSDate *date1 = [NSDate dateWithTimeIntervalSinceNow:86400*2+480];
     NSDate *date2 = [NSDate dateWithTimeIntervalSinceNow:86400*3+1500];
@@ -83,6 +84,8 @@
     return events.count;
 }
 
+
+// Bringing in the Tableview Cells
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -96,11 +99,11 @@
         {
             if([view isKindOfClass:[CustomCellView class]])
             {
-                cell = (CustomCellView*)view;
-                cell.textLabel.text = [events objectAtIndex:indexPath.row];
+                cell = (CustomCellView *)view;
+                cell.placeLabel.text = [events objectAtIndex:indexPath.row];
+                               
                 
-                
-                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+                NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
                 
                 NSDate *tDate = [dates objectAtIndex:indexPath.row];
@@ -109,7 +112,7 @@
                  
             }
         }
-        cell.textLabel.text = [events objectAtIndex:indexPath.row];
+        cell.detailLabel.text = [events objectAtIndex:indexPath.row];
         
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
@@ -117,8 +120,9 @@
         NSDate *tDate = [dates objectAtIndex:indexPath.row];
         NSString *fDate = [dateFormat stringFromDate:tDate];
         cell.detailLabel.text = fDate;
-         
+        
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 

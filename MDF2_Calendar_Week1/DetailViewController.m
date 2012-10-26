@@ -27,9 +27,8 @@
 
 - (void)viewDidLoad
 {
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:1.0];
+    //  Hides the TableView while working with this screen
     theTableView.hidden = true;
-    
     calArray = [[NSMutableArray alloc] init];
     
     EKEventStore *eventStore = [[EKEventStore alloc] init];
@@ -108,7 +107,7 @@
     
 }
 
-
+//  Add to Calendar Button
 - (IBAction)addToCal:(id)sender
 {
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Save to Calendar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
@@ -127,7 +126,8 @@
     } else if (buttonIndex == 1)
 	{
         EKEventStore *eventStore = [[EKEventStore alloc] init];
-        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+        {
             
             
             EKEvent *newEvent = [EKEvent eventWithEventStore:eventStore];
@@ -140,9 +140,7 @@
                 NSDate *formatterDate = [inputFormatter dateFromString:theDate.text];
                 
                 NSLog(@"Date %@", formatterDate);
-                
-                
-                //NSDate *mydate = savedDate;
+            
                 newEvent.startDate = formatterDate;
                 newEvent.endDate = [[NSDate alloc] initWithTimeInterval:7200 sinceDate:newEvent.startDate];
                 
@@ -153,25 +151,26 @@
                     newEvent.calendar = [eventStore defaultCalendarForNewEvents];
                 }
                 
-                //newEvent.calendar = [eventStore defaultCalendarForNewEvents];
-                
                 [eventStore saveEvent:newEvent span:EKSpanThisEvent error:nil];
                 
-                NSLog(@"Added to Cal");
-            }}];
+                NSLog(@"Added Event to Calendar");
+            }
+        }];
         
         
 	} else if (buttonIndex == 2) {
         
-        NSLog(@"Canceled");
+        NSLog(@"Canceled Action");
     }
 }
 
+//  Home button (simply dismisses the view modally)
 -(IBAction)onClose:(id)sender
 {
     [self dismissModalViewControllerAnimated:true];
 }
 
+//  Show the picker
 - (IBAction)showCals:(id)sender
 {
     theTableView.hidden = false;
@@ -179,6 +178,7 @@
     pickerView.hidden = false;
 }
 
+//  Picker Selection Click
 -(IBAction)onclick:(id)sender
 {
     pickerView.hidden = true;

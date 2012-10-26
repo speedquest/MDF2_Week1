@@ -20,6 +20,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    
+    //  Implementing the NAV BAR
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     UINavigationController *nav1 = [[UINavigationController alloc]initWithRootViewController:self.viewController];
     self.window.rootViewController = nav1;
